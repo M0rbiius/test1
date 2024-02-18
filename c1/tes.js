@@ -11,26 +11,66 @@ let t = [
         "amount": 4,
         "quantity": 7
     },
+
+    
 ]
 
-//FOREACH
 document.addEventListener('DOMContentLoaded', function() {
     
     let count = t.length;
 
     console.log("Length of t array:" + count);
-    
-    t.forEach(elem => {
 
-        var divEl = document.querySelector('div');
-        divEl.innerHTML += 
-        '<div>' + 
-        "Amount:" + elem.amount + " " + "Quantity:" + elem.quantity + 
-        '</div>';
+    let i = 0;
+    let total = 0;
+
+    var divT = document.querySelector('div#hjk');
+
+    while(i < count)
+    {
+        let elem = t[i];
         
-    });
+        let tot = elem.amount * elem.quantity
+
+        total += tot;
+
+        if( (i+1) %2 === 0 )
+        {
+            drawAmountAndQuantity(t, i, true);
+        }
+        else
+        {
+            drawAmountAndQuantity(t, i, false);
+        }
+
+        i++;
+        
+        divT.innerHTML = total;
+        
+    }
+
+    console.log(total);
 
 }, false);
+
+//FOREACH
+// document.addEventListener('DOMContentLoaded', function() {
+    
+//     let count = t.length;
+
+//     console.log("Length of t array:" + count);
+    
+//     t.forEach(elem => {
+
+//         var divEl = document.querySelector('div');
+//         divEl.innerHTML += 
+//         '<div>' + 
+//         "Amount:" + elem.amount + " " + "Quantity:" + elem.quantity + 
+//         '</div>';
+
+//     });
+
+// }, false);
 
 //FOR
 // document.addEventListener('DOMContentLoaded', function() {
