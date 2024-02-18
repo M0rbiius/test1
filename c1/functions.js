@@ -26,5 +26,3 @@ function drawAmountAndQuantity(arr, i, isNormal)
     
     divEl.innerHTML += htmlBuilder;
 }
-
-

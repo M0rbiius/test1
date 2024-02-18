@@ -11,48 +11,61 @@ let t = [
         "amount": 4,
         "quantity": 7
     },
-
-    
+    {
+        "amount": 4,
+        "quantity": 7
+    }
 ]
 
-document.addEventListener('DOMContentLoaded', function() {
+// document.addEventListener('DOMContentLoaded', function() {
     
-    let count = t.length;
+//     let count = t.length;
 
-    console.log("Length of t array:" + count);
+//     console.log("Length of t array:" + count);
 
-    let i = 0;
-    let total = 0;
+//     let i = 0;
+//     let total = 0;
 
-    var divT = document.querySelector('div#hjk');
+//     var divT = document.querySelector('div#total');
 
-    while(i < count)
-    {
-        let elem = t[i];
+//     while(i < count)
+//     {
+//         let elem = t[i];
         
-        let tot = elem.amount * elem.quantity
+//         let tot = elem.amount * elem.quantity
 
-        total += tot;
+//         total += tot;
 
-        if( (i+1) %2 === 0 )
-        {
-            drawAmountAndQuantity(t, i, true);
-        }
-        else
-        {
-            drawAmountAndQuantity(t, i, false);
-        }
+//         divT.innerHTML = total;
 
-        i++;
-        
-        divT.innerHTML = total;
-        
+//         if( (i+1) %2 === 0 )
+//         {
+//             drawAmountAndQuantity(t, i, true);
+//         }
+//         else
+//         {
+//             drawAmountAndQuantity(t, i, false);
+//         }
+
+//         i++;
+//     }
+
+//     console.log(total);
+
+// }, false);
+
+function persistence(num) {
+    let numStr = num.toString();
+    while(numStr.length != 1){
+      let t = 1;
+      numStr.split('').forEach(x => t *= x);
+      numStr = t + "";
     }
+    console.log(numStr)
+    return numStr;
+  }
 
-    console.log(total);
-
-}, false);
-
+  persistence(5723799)
 //FOREACH
 // document.addEventListener('DOMContentLoaded', function() {
     
